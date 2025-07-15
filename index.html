@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>スライドショー Hero</title>
+  <title>レスポンシブスライドショー</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: sans-serif;
-      overflow: hidden;
     }
 
     .slideshow {
-      width: 100%;
-      height: 100vh;
       position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9; /* 画面に合わせて高さも調整 */
+      overflow: hidden;
     }
 
     .slide {
@@ -38,27 +37,21 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: clamp(1.5rem, 5vw, 3rem); /* 可変フォントサイズ */
       font-weight: bold;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      font-size: clamp(1rem, 5vw, 3rem); /* 画面に応じた文字サイズ */
       text-align: center;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      max-width: 90%;
       padding: 0 1rem;
       box-sizing: border-box;
-      max-width: 90%;
-    }
-
-    @media (max-width: 768px) {
-      .overlay-text {
-        font-size: clamp(1rem, 6vw, 2rem);
-      }
     }
   </style>
 </head>
 <body>
   <div class="slideshow">
-    <img src="photo1.jpg" class="slide active" alt="Slide 1" />
-    <img src="photo2.jpg" class="slide" alt="Slide 2" />
-    <img src="photo3.jpg" class="slide" alt="Slide 3" />
+    <img src="images/photo1.jpg" class="slide active" alt="スライド1">
+    <img src="images/photo2.jpg" class="slide" alt="スライド2">
+    <img src="images/photo3.jpg" class="slide" alt="スライド3">
     <div class="overlay-text">五感で感じる、至福のひととき。</div>
   </div>
 
