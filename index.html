@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>レスポンシブスライドショー</title>
+  <title>スライドショー</title>
   <style>
     html, body {
       margin: 0;
@@ -12,14 +12,16 @@
     }
 
     .slideshow {
-      position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9; /* 画面に合わせて高さも調整 */
+      height: 100vh; /* 画面の縦サイズにぴったり */
+      position: relative;
       overflow: hidden;
     }
 
     .slide {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -37,33 +39,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-weight: bold;
-      font-size: clamp(1rem, 5vw, 3rem); /* 画面に応じた文字サイズ */
+      font-size: clamp(1.2rem, 6vw, 3rem);
       text-align: center;
+      font-weight: bold;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
-      max-width: 90%;
       padding: 0 1rem;
       box-sizing: border-box;
+      max-width: 90%;
     }
-  </style>
-</head>
-<body>
-  <div class="slideshow">
-    <img src="photo1.jpg" class="slide active" alt="スライド1">
-    <img src="photo2.jpg" class="slide" alt="スライド2">
-    <img src="photo3.jpg" class="slide" alt="スライド3">
-    <div class="overlay-text">五感で感じる、</br>至福のひととき。</div>
-  </div>
-
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
-
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 4000);
-  </script>
-</body>
-</html>
+  </style
